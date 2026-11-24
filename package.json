@@ -1,0 +1,139 @@
+{
+	"name": "han-script-lint",
+	"displayName": "Han Script Lint",
+	"description": "Detect mixed Simplified and Traditional Chinese in Markdown and text files, and list off-script characters in the Problems panel.",
+	"version": "0.1.0",
+	"publisher": "lanternbay",
+	"license": "MIT",
+	"icon": "media/icon.png",
+	"keywords": [
+		"chinese",
+		"simplified",
+		"traditional",
+		"simplified-chinese",
+		"traditional-chinese",
+		"lint",
+		"linter",
+		"markdown",
+		"plaintext",
+		"hanzi",
+		"cjk",
+		"opencc",
+		"typography",
+		"writing",
+		"taiwan",
+		"hong-kong",
+		"中文",
+		"簡體",
+		"繁體",
+		"簡繁混用",
+		"简体",
+		"繁体",
+		"简繁混用",
+		"校對",
+		"校对"
+	],
+	"categories": [
+		"Linters"
+	],
+	"engines": {
+		"vscode": "^1.85.0"
+	},
+	"main": "./extension.js",
+	"activationEvents": [
+		"onLanguage:markdown",
+		"onLanguage:plaintext"
+	],
+	"contributes": {
+		"commands": [
+			{
+				"command": "hanScriptLint.scanCurrentFile",
+				"title": "Scan Current File",
+				"category": "Han Script Lint"
+			},
+			{
+				"command": "hanScriptLint.scanWorkspace",
+				"title": "Scan Workspace",
+				"category": "Han Script Lint"
+			},
+			{
+				"command": "hanScriptLint.clearDiagnostics",
+				"title": "Clear Diagnostics",
+				"category": "Han Script Lint"
+			}
+		],
+		"configuration": {
+			"title": "Han Script Lint",
+			"properties": {
+				"hanScriptLint.targetScript": {
+					"type": "string",
+					"enum": [
+						"auto",
+						"traditional",
+						"zh-Hant",
+						"simplified",
+						"zh-Hans"
+					],
+					"enumDescriptions": [
+						"Infer the majority script from exclusive characters and only report the minority (a tie reports both).",
+						"Report exclusive Simplified characters (for Traditional Chinese writing). Alias: zh-Hant.",
+						"Same as traditional (IETF language tag for Traditional Chinese).",
+						"Report exclusive Traditional characters (for Simplified Chinese writing). Alias: zh-Hans.",
+						"Same as simplified (IETF language tag for Simplified Chinese)."
+					],
+					"default": "auto",
+					"description": "Target written standard. auto uses a majority vote of exclusive characters and only flags the minority script."
+				},
+				"hanScriptLint.ignoredCharacters": {
+					"type": "string",
+					"default": "台里后面只于并才云谷松范余涂姜冲准系板斗丑占干了",
+					"description": "Characters that should not be treated as exclusive Simplified or Traditional evidence. The default covers common one-to-many mappings such as 台/臺 and 里/裏."
+				},
+				"hanScriptLint.lintOnOpen": {
+					"type": "boolean",
+					"default": true,
+					"description": "Lint Markdown and plain text files when they are opened."
+				},
+				"hanScriptLint.lintOnChange": {
+					"type": "boolean",
+					"default": true,
+					"description": "Re-lint the active editor while you type (debounced)."
+				},
+				"hanScriptLint.lintOnSave": {
+					"type": "boolean",
+					"default": true,
+					"description": "Re-lint a file when it is saved."
+				},
+				"hanScriptLint.maxWorkspaceFiles": {
+					"type": "number",
+					"default": 2000,
+					"minimum": 1,
+					"description": "Maximum number of text files to scan in a workspace scan."
+				}
+			}
+		}
+	},
+	"scripts": {
+		"compile": "node esbuild.mjs",
+		"build": "node esbuild.mjs",
+		"vscode:prepublish": "node esbuild.mjs",
+		"package": "npx --yes @vscode/vsce package --no-update-package-json --out han-script-lint-0.1.0.vsix"
+	},
+	"devDependencies": {
+		"@types/node": "^22.15.17",
+		"@types/vscode": "^1.85.0",
+		"esbuild": "0.25.5",
+		"typescript": "^5.8.3"
+	},
+	"allowScripts": {
+		"esbuild@0.25.5": true
+	},
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/dtpnm857jk-create/han-script-lint.git"
+	},
+	"homepage": "https://github.com/dtpnm857jk-create/han-script-lint",
+	"bugs": {
+		"url": "https://github.com/dtpnm857jk-create/han-script-lint/issues"
+	}
+}

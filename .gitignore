@@ -1,0 +1,33 @@
+# dependencies and build output
+node_modules/
+extension.js
+*.map
+*.vsix
+.vscode-test/
+
+# secrets and credentials — never commit
+.env
+.env.*
+*.pem
+*.key
+*.p12
+*.pfx
+*.crt
+*.cer
+*token*
+*secret*
+*credential*
+*keystore*
+.vsce
+.vscode-vsce
+openvsx-token*
+**/.ovsxrc
+**/personal-access-token*
+id_rsa
+id_ed25519
+
+# editors / OS
+.DS_Store
+.idea/
+.vscode/
+*.iml
