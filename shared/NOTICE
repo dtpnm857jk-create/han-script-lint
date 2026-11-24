@@ -1,0 +1,4 @@
+Character tables in charset.ts are derived from OpenCC
+https://github.com/BYVoid/OpenCC
+Apache License 2.0
+Retrieved 2026-11-24 from data/dictionary/STCharacters.txt and TSCharacters.txt on branch master.
