@@ -1,5 +1,7 @@
 # Han Script Lint
 
+**[Download on itch.io](https://csvclinic.itch.io/han-script-lint-simplifiedtraditional-chinese-mix-checker-for-vs-code)**
+
 Han Script Lint is a local, offline linter for **mixed Simplified and Traditional Chinese**, by **Lanternbay Studio**.
 
 Many tools convert between the two written standards, or expand search so that 软 and 軟 hit the same note. This extension does a narrower job: it finds **exclusive characters** (for example 软 vs 軟, 这 vs 這) and reports them as warnings in the editor and the Problems panel. Use it to keep a Markdown vault, manuscript, subtitle file, or plain-text draft consistent.
@@ -32,7 +34,7 @@ Visual Studio Code 1.85 or later, or a compatible editor that can install a VSIX
 
 Han Script Lint is published by **Lanternbay Studio**.
 
-Download the `.vsix` from this repository's [Releases](https://github.com/dtpnm857jk-create/han-script-lint/releases), then install it in Visual Studio Code:
+Download the `.vsix` from this repository's [GitHub Release v0.1.0](https://github.com/dtpnm857jk-create/han-script-lint/releases/tag/v0.1.0) or from [itch.io](https://csvclinic.itch.io/han-script-lint-simplifiedtraditional-chinese-mix-checker-for-vs-code), then install it in Visual Studio Code:
 
 1. Open the Extensions view.
 2. Click the `…` menu at the top of the view and choose **Install from VSIX…**.
@@ -69,6 +71,8 @@ Exclusive-character tables are derived from OpenCC (`STCharacters.txt`, `TSChara
 
 ## 中文說明
 
+**[在 itch.io 下載](https://csvclinic.itch.io/han-script-lint-simplifiedtraditional-chinese-mix-checker-for-vs-code)**
+
 Han Script Lint（簡繁混用檢查）是一個**本機、離線**的 linter，用來找出文稿裡的簡繁混用，由 **Lanternbay Studio** 發布。
 
 現有工具多半是把簡體轉成繁體（或相反），或讓搜尋同時命中「软」與「軟」。這個擴充做的比較窄：它會找出**簡體專用字或繁體專用字**（例如 软／軟、这／這），在編輯器裡標成警告，並列在問題面板。適合用來維持 Markdown 筆記庫、文稿、字幕或純文字草稿的用字一致。
@@ -95,7 +99,7 @@ Han Script Lint（簡繁混用檢查）是一個**本機、離線**的 linter，
 
 ## 安裝
 
-請先從本儲存庫的 [Releases](https://github.com/dtpnm857jk-create/han-script-lint/releases) 下載 `.vsix`，再在 VS Code 中安裝：
+請先從本儲存庫的 [GitHub Release v0.1.0](https://github.com/dtpnm857jk-create/han-script-lint/releases/tag/v0.1.0) 或 [itch.io](https://csvclinic.itch.io/han-script-lint-simplifiedtraditional-chinese-mix-checker-for-vs-code) 下載 `.vsix`，再在 VS Code 中安裝：
 
 1. 開啟擴充功能檢視。
 2. 點檢視上方的 `…` 選單，選擇 **Install from VSIX…**（從 VSIX 安裝）。
